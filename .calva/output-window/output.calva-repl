@@ -10,7 +10,7 @@
 ;   - See https://calva.io/connect-sequences/
 ; 
 ; Starting Jack-in Terminal: pushd /Users/nathanbarlow/code-stuff/clojure/fwpd ; lein update-in :dependencies conj '[nrepl,"1.0.0"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.28.5"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +uberjar repl :headless ; popd
-; Using host:port 127.0.0.1:55767 ...
+; Using host:port 127.0.0.1:59861 ...
 ; Hooking up nREPL sessions ...
 ; Connected session: clj
 ; TIPS:
@@ -22,11 +22,365 @@
 ;   - Clojure lines in stack traces are peekable and clickable.
 clj꞉fwpd.core꞉>  ; Use `alt+enter` to evaluate
 ; Jack-in done.
-clj꞉fwpd.core꞉>  (glitter-filter 3 (mapify (parse (slurp filename))))
-({:name "Edward Cullen", :glitter-index 10}
- {:name "Jacob Black", :glitter-index 3}
- {:name "Carlisle Cullen", :glitter-index 6})
 clj꞉fwpd.core꞉> 
-(namify (glitter-filter 3 (mapify (parse (slurp filename)))))
-("Edward Cullen" "Jacob Black" "Carlisle Cullen")
+(+ 1 2)
+3
 clj꞉fwpd.core꞉> 
+(ns ch5)
+nil
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+#'ch5/hello
+clj꞉ch5꞉> 
+(hello)
+"hello"
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+#'ch5/hello
+clj꞉ch5꞉>  (hello)
+"hello dude"
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+; Syntax error compiling at (src/ch5.clj:9:3).
+; Unable to resolve symbol: words in this context
+; Evaluation of file ch5.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+#'ch5/wisdom
+clj꞉ch5꞉> 
+(wisdom "Always bathe on Fridays")
+"Always bathe on Fridays, Daniel-san"
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+#'ch5/year-end-evaluation
+clj꞉ch5꞉> 
+(year-end-evaluation)
+"You get a raise!"
+clj꞉ch5꞉> 
+(year-end-evaluation)
+"Better luck next year!"
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+#'ch5/analysis
+clj꞉ch5꞉> 
+(analysis "hello friend")
+"Character count: 12"
+clj꞉ch5꞉>  (def great-baby-name "Rosanthony")
+#'ch5/great-baby-name
+clj꞉ch5꞉> 
+(let [great-baby-name "Bloodthunder"]
+  great-baby-name)
+"Bloodthunder"
+clj꞉ch5꞉> 
+great-baby-name
+"Rosanthony"
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+#'ch5/sum
+clj꞉ch5꞉>  (sum [1 2 3])
+6
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+(sum [1 2 3])
+clj꞉ch5꞉> 
+#'ch5/sum
+#'ch5/sum
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+6
+clj꞉ch5꞉> 
+6
+clj꞉ch5꞉> 
+#'ch5/sum
+clj꞉ch5꞉> 
+(sum [1 2 3])
+6
+clj꞉ch5꞉> 
+6
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+#'ch5/clean
+clj꞉ch5꞉> (clean "My boa constrictor is so sassy lol!")  
+"My boa constrictor is so sassy LOL!"
+clj꞉ch5꞉> 
+(clean "My boa constrictor is so sassy lol!      ")
+"My boa constrictor is so sassy LOL!"
+clj꞉ch5꞉> 
+(clean "    My boa constrictor is so sassy lol!      ")
+"My boa constrictor is so sassy LOL!"
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+#'ch5/clean
+clj꞉ch5꞉> 
+(clean "    My boa constrictor is so sassy lol!      ")
+"My boa constrictor is so sassy LOL!"
+clj꞉ch5꞉> 
+((comp inc *) 2 34)
+69
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+; Syntax error compiling def at (src/ch5.clj:34:1).
+; Expecting var, but Character is mapped to class java.lang.Character
+; Evaluation of file ch5.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+#'ch5/c-dex
+clj꞉ch5꞉> 
+(c-int character)
+10
+clj꞉ch5꞉> 
+(c-str character)
+4
+clj꞉ch5꞉> 
+(c-dex character)
+5
+clj꞉ch5꞉> 
+#'ch5/spell-slots
+clj꞉ch5꞉> 
+#'ch5/spell-slots
+clj꞉ch5꞉>  (spell-slots character)
+6
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+#'ch5/spell-slots
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+#'ch5/spell-slots-comp
+clj꞉ch5꞉> 
+(spell-slots-comp character)
+6
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+#'ch5/two-comp
+clj꞉ch5꞉> 
+(two-comp + / [2 3])
+; Execution error (ArityException) at ch5/eval8244 (form-init1246718128060215642.clj:156).
+; Wrong number of args (3) passed to: ch5/two-comp
+clj꞉ch5꞉> 
+((two-comp + /) [2 3])
+; Execution error (ClassCastException) at ch5$two_comp$fn__8241/doInvoke (ch5.clj:52).
+; class clojure.lang.PersistentVector cannot be cast to class java.lang.Number (clojure.lang.PersistentVector is in unnamed module of loader 'app'; java.lang.Number is in module java.base of loader 'bootstrap')
+clj꞉ch5꞉> 
+((two-comp + -) [2 3])
+; Execution error (ClassCastException) at ch5$two_comp$fn__8241/doInvoke (ch5.clj:52).
+; class clojure.lang.PersistentVector cannot be cast to class java.lang.Number (clojure.lang.PersistentVector is in unnamed module of loader 'app'; java.lang.Number is in module java.base of loader 'bootstrap')
+clj꞉ch5꞉> 
+((comp inc *) 2 34)
+69
+clj꞉ch5꞉> 
+((two-comp inc *) 2 34)
+69
+clj꞉ch5꞉> 
+(if (= (count [1 2 3]) 0)
+  "hello"
+  "oh no!")
+"oh no!"
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+#'ch5/my-comp
+clj꞉ch5꞉> 
+((my-comp inc *) 2 34)
+; Execution error (ClassCastException) at ch5/my-comp (ch5.clj:59).
+; class ch5$my_comp$fn__8284 cannot be cast to class java.lang.Number (ch5$my_comp$fn__8284 is in unnamed module of loader clojure.lang.DynamicClassLoader @44f2b10b; java.lang.Number is in module java.base of loader 'bootstrap')
+clj꞉ch5꞉> 
+(defn m-comp
+  [& g]
+  (fn [& args]
+    ((first g) (apply (first (rest g)) args))))
+#'ch5/m-comp
+clj꞉ch5꞉> 
+((m-comp inc *) 2 34)
+69
+clj꞉ch5꞉> 
+(defn temp
+  [& g]
+  (count g))
+#'ch5/temp
+clj꞉ch5꞉> 
+(temp inc *)
+2
+clj꞉ch5꞉> 
+#'ch5/my-comp
+clj꞉ch5꞉> 
+((my-comp inc *) 2 34)
+; Execution error (ClassCastException) at ch5/my-comp (form-init1246718128060215642.clj:59).
+; class ch5$my_comp$fn__8297 cannot be cast to class java.lang.Number (ch5$my_comp$fn__8297 is in unnamed module of loader clojure.lang.DynamicClassLoader @ce4d369; java.lang.Number is in module java.base of loader 'bootstrap')
+clj꞉ch5꞉> 
+((my-comp inc *))
+; Execution error (ClassCastException) at ch5/my-comp (form-init1246718128060215642.clj:59).
+; class ch5$my_comp$fn__8297 cannot be cast to class java.lang.Number (ch5$my_comp$fn__8297 is in unnamed module of loader clojure.lang.DynamicClassLoader @ce4d369; java.lang.Number is in module java.base of loader 'bootstrap')
+clj꞉ch5꞉> 
+(my-comp inc *)
+; Execution error (ClassCastException) at ch5/my-comp (form-init1246718128060215642.clj:59).
+; class ch5$my_comp$fn__8297 cannot be cast to class java.lang.Number (ch5$my_comp$fn__8297 is in unnamed module of loader clojure.lang.DynamicClassLoader @ce4d369; java.lang.Number is in module java.base of loader 'bootstrap')
+clj꞉ch5꞉> 
+(comp inc *)
+#function[clojure.core/comp/fn--5876]
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+#'ch5/my-comp
+clj꞉ch5꞉> 
+(my-comp inc *)
+; Execution error (ClassCastException) at ch5/my-comp (ch5.clj:59).
+; class ch5$my_comp$fn__8336 cannot be cast to class java.lang.Number (ch5$my_comp$fn__8336 is in unnamed module of loader clojure.lang.DynamicClassLoader @33953f78; java.lang.Number is in module java.base of loader 'bootstrap')
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+#'ch5/my-comp
+clj꞉ch5꞉> 
+(my-comp inc *)
+; Execution error (ClassCastException) at ch5/my-comp (ch5.clj:59).
+; class ch5$my_comp$fn__8369 cannot be cast to class java.lang.Number (ch5$my_comp$fn__8369 is in unnamed module of loader clojure.lang.DynamicClassLoader @3bd5ae16; java.lang.Number is in module java.base of loader 'bootstrap')
+clj꞉ch5꞉> 
+((my-comp *) 2 3)
+6
+clj꞉ch5꞉> 
+(defn temp
+  [& g]
+  (if (= (count g) 1)
+    (rest g)
+    (first g)))
+#'ch5/temp
+clj꞉ch5꞉> 
+(temp inc *)
+#function[clojure.core/inc]
+clj꞉ch5꞉> 
+(temp *)
+()
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+#'ch5/my-comp
+clj꞉ch5꞉> 
+((my-comp inc *) 2 34)
+; Execution error (ClassCastException) at ch5/my-comp (ch5.clj:59).
+; class clojure.lang.PersistentList cannot be cast to class java.lang.Number (clojure.lang.PersistentList is in unnamed module of loader 'app'; java.lang.Number is in module java.base of loader 'bootstrap')
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+#'ch5/my-comp
+clj꞉ch5꞉> (3 2 1 0)
+(reverse [0 1 2 3])
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+#'ch5/my-comp
+clj꞉ch5꞉> 
+((my-comp inc *) 2 34)
+; Execution error (ClassCastException) at ch5/my-comp (ch5.clj:59).
+; class ch5$my_comp$fn__8475 cannot be cast to class java.lang.Number (ch5$my_comp$fn__8475 is in unnamed module of loader clojure.lang.DynamicClassLoader @37d368be; java.lang.Number is in module java.base of loader 'bootstrap')
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+#'ch5/my-comp
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+; Syntax error compiling at (src/ch5.clj:57:5).
+; Unable to resolve symbol: f in this context
+; Evaluation of file ch5.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+#'ch5/two-comp
+clj꞉ch5꞉> 
+#'ch5/two-comp
+clj꞉ch5꞉> 
+(defn temp
+  []
+  (fn [num]
+    (defn blah [num] (inc num))
+    (blah num)))
+#'ch5/temp
+clj꞉ch5꞉> 
+(temp 6)
+#function[ch5/temp/fn--8570]
+clj꞉ch5꞉> 
+((temp 6))
+; Execution error (ArityException) at ch5/eval8577 (form-init1246718128060215642.clj:292).
+; Wrong number of args (0) passed to: ch5/temp/fn--8570
+clj꞉ch5꞉> 
+#'ch5/temp
+clj꞉ch5꞉> 
+((temp) 6)
+7
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+#'ch5/my-comp
+clj꞉ch5꞉> 
+(defn my-comp
+  [& g]
+  (fn [& args]
+    (defn inner-comp
+      [& g]
+      (if (= (count g) 1)
+        (apply (first g) args)
+        ((first g) (inner-comp (rest g)))))
+    (inner-comp g)))
+#'ch5/my-comp
+clj꞉ch5꞉> 
+((my-comp inc *) 2 34)
+; Execution error (ClassCastException) at ch5$my_comp$fn__8617$inner_comp__8618/doInvoke (form-init1246718128060215642.clj:309).
+; class clojure.lang.ArraySeq cannot be cast to class clojure.lang.IFn (clojure.lang.ArraySeq and clojure.lang.IFn are in unnamed module of loader 'app')
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+#'ch5/my-comp
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+#'ch5/my-comp
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+#'ch5/my-comp
+clj꞉ch5꞉> 
+((my-comp inc *) 2 34)
+; Execution error (ClassCastException) at ch5$my_comp$fn__8721$inner_comp__8722/doInvoke (ch5.clj:66).
+; class clojure.lang.ArraySeq cannot be cast to class clojure.lang.IFn (clojure.lang.ArraySeq and clojure.lang.IFn are in unnamed module of loader 'app')
+clj꞉ch5꞉> 
+(defn two-comp
+  [f g]
+  (fn [& args]
+    (defn foo [g] (apply g args))
+    (f (foo g))))
+#'ch5/two-comp
+clj꞉ch5꞉> 
+((two-comp inc *) 2 34)
+69
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+#'ch5/my-comp
+clj꞉ch5꞉> 
+((my-comp inc *) 2 34)
+; Execution error (ClassCastException) at ch5$my_comp$fn__8763$inner_comp__8764/doInvoke (ch5.clj:68).
+; class clojure.lang.ArraySeq cannot be cast to class clojure.lang.IFn (clojure.lang.ArraySeq and clojure.lang.IFn are in unnamed module of loader 'app')
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+#'ch5/my-comp
+clj꞉ch5꞉> 
+((my-comp inc *) 2 34)
+; Execution error (ClassCastException) at ch5$my_comp$fn__8798$inner_comp__8799/doInvoke (ch5.clj:68).
+; class clojure.lang.ArraySeq cannot be cast to class clojure.lang.IFn (clojure.lang.ArraySeq and clojure.lang.IFn are in unnamed module of loader 'app')
+clj꞉ch5꞉> 
+(defn foo [& g] (count g))
+#'ch5/foo
+clj꞉ch5꞉> 
+(foo + *)
+2
+clj꞉ch5꞉> 
+(foo +)
+1
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+#'ch5/my-comp
+clj꞉ch5꞉> 
+((my-comp inc) 2)
+; Execution error (ClassCastException) at ch5$my_comp$fn__8838$inner_comp__8839/doInvoke (ch5.clj:68).
+; class clojure.lang.ArraySeq cannot be cast to class clojure.lang.IFn (clojure.lang.ArraySeq and clojure.lang.IFn are in unnamed module of loader 'app')
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+#'ch5/my-comp
+clj꞉ch5꞉> 
+((my-comp inc) 2)
+3
+clj꞉ch5꞉> 
+((my-comp inc *) 2 3)
+7
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+#'ch5/my-comp
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+#'ch5/my-comp
+clj꞉ch5꞉> 
