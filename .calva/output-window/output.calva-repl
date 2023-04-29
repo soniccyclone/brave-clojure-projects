@@ -384,3 +384,37 @@ clj꞉ch5꞉> 
 ; Evaluating file: ch5.clj
 #'ch5/my-comp
 clj꞉ch5꞉> 
+#'ch5/my-comp
+clj꞉ch5꞉> 
+(); Evaluating file: ch5.clj
+#'ch5/my-comp-recur
+clj꞉ch5꞉> 
+((my-comp-recur inc *) 2 3)
+; Execution error (ArityException) at ch5$my_comp_recur$fn__8983/doInvoke (ch5.clj:80).
+; Wrong number of args (2) passed to: clojure.core/inc
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+#'ch5/my-comp-recur
+clj꞉ch5꞉> 
+((my-comp-recur inc *) 2 3)
+; Execution error (ClassCastException) at ch5$my_comp_recur$fn__9023/doInvoke (ch5.clj:80).
+; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+#'ch5/my-comp-recur
+clj꞉ch5꞉> 
+((my-comp-recur inc *) 2 3)
+7
+clj꞉ch5꞉> 
+((comp inc *) 2 3)
+7
+clj꞉ch5꞉> 
+; Evaluating file: ch5.clj
+#'ch5/my-comp-recur
+clj꞉ch5꞉> 
+((comp inc *) 2 3)
+7
+clj꞉ch5꞉> 
+((my-comp-recur inc *) 2 3)
+7
+clj꞉ch5꞉> 

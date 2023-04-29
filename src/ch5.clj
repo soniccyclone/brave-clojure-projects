@@ -68,3 +68,14 @@
         (apply (first g) args)
         ((first g) (inner-comp (rest g)))))
     (inner-comp b)))
+
+(defn my-comp-recur
+  [& g]
+  (fn [& args]
+    (defn inner-comp-recur
+      [g accumulate]
+      (if (= (count g) 1)
+        ((first g) accumulate)
+        (recur (rest g) ((first g) accumulate))))
+    (let [b (reverse g)]
+      (inner-comp-recur (rest b) (apply (first b) args)))))
